@@ -2,7 +2,7 @@
 import { AmbientLight, Color, DirectionalLight, DirectionalLightHelper, Scene } from "three";
 
 export function setupLights(scene: Scene): void {
-    const directionalLight1 = new DirectionalLight(new Color("white"));
+    const directionalLight1 = new DirectionalLight(new Color("blue"));
     directionalLight1.position.set(-10, 15, 10);
     scene.add(directionalLight1);
 

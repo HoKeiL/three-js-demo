@@ -36,11 +36,20 @@ export function setupAndAnimateMyThreeJSScene(): void {
 
     //Make a cube and add it to the scene.
     //A mesh needs a geometry and a material...
-    const geometry = new BoxGeometry(10, 10, 10);
-    const material = new MeshStandardMaterial({ color: new Color("yellow") });
+    const geometry = new BoxGeometry(10,50 ,10 );
+    const material = new MeshStandardMaterial({ color: new Color("white") });
     const myCubeMesh = new Mesh(geometry, material);
     myCubeMesh.position.y = 20;
     scene.add(myCubeMesh);
+
+    const newBoxGeometry = new BoxGeometry(10,10,10);
+    const materialForNewBox = new MeshStandardMaterial({color: new Color("white")});
+    const myNewBoxMesh = new Mesh(newBoxGeometry,materialForNewBox);
+    myNewBoxMesh.position.x = 45;
+    myNewBoxMesh.position.y = 5;
+    myNewBoxMesh.position.z = 45;
+
+    scene.add(myNewBoxMesh);
 
     animate();
 
@@ -57,6 +66,8 @@ export function setupAndAnimateMyThreeJSScene(): void {
         myCubeMesh.rotation.y += 0.01;
         myCubeMesh.rotation.x += 0.02;
 
+        myNewBoxMesh.rotation.y += 0.01;
+
         //Draw the current scene to the canvas - one frame of animation.
         renderer.render(scene, camera);
 
@@ -70,4 +81,4 @@ export function setupAndAnimateMyThreeJSScene(): void {
 
 }
 
-setupAndAnimateMyThreeJSScene();
+setupAndAnimateMyThreeJSScene(); 
